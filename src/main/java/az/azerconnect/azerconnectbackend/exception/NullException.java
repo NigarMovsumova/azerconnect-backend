@@ -1,4 +1,4 @@
-package az.azerconnect.hometask.exception;
+package az.azerconnect.azerconnectbackend.exception;
 
 public class NullException extends RuntimeException {
 

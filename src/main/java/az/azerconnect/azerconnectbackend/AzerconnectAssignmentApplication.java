@@ -1,4 +1,4 @@
-package az.azerconnect.hometask;
+package az.azerconnect.azerconnectbackend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

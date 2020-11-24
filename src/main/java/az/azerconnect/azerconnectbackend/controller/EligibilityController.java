@@ -1,7 +1,7 @@
-package az.azerconnect.hometask.controller;
+package az.azerconnect.azerconnectbackend.controller;
 
-import az.azerconnect.hometask.model.MsisdnRequest;
-import az.azerconnect.hometask.service.EligibilityCheckService;
+import az.azerconnect.azerconnectbackend.model.MsisdnRequest;
+import az.azerconnect.azerconnectbackend.service.EligibilityCheckService;
 import java.util.Map;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,6 +1,6 @@
-package az.azerconnect.hometask.service;
+package az.azerconnect.azerconnectbackend.service;
 
-import az.azerconnect.hometask.model.MsisdnRequest;
+import az.azerconnect.azerconnectbackend.model.MsisdnRequest;
 import java.util.Map;
 import org.springframework.stereotype.Service;
 

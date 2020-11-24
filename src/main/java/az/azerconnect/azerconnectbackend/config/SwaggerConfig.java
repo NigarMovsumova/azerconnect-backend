@@ -1,4 +1,4 @@
-package az.azerconnect.hometask.config;
+package az.azerconnect.azerconnectbackend.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,8 +27,7 @@ class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().title("")
-                .description("")
-                .contact(new Contact("", "", ""))
+                .contact(new Contact("Azerconnect", "azerconnect.az", "info@azerconnect.az"))
                 .version("1.0.0")
                 .build();
     }

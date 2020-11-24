@@ -1,4 +1,4 @@
-package az.azerconnect.hometask.model;
+package az.azerconnect.azerconnectbackend.model;
 
 import java.util.Map;
 
