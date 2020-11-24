@@ -18,7 +18,7 @@ public class EligibilityController {
     }
 
     @GetMapping("masklist/iseligible")
-    public Map<String, String> isEligibleToSell(MsisdnRequest msisdnRequest){
-       return eligibilityCheckService.isEligibleToSell(msisdnRequest);
+    public Map<String, String> isEligibleToSell(MsisdnRequest msisdnRequest) {
+        return eligibilityCheckService.isEligibleToSell(msisdnRequest);
     }
 }

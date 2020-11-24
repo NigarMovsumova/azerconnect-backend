@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -15,19 +14,19 @@ import static java.lang.String.format;
 
 public class ParsingUtil {
 
-    public static Set<String> parseStringToSet(String parsedString){
+    public static Set<String> parseStringToSet(String parsedString) {
         return Arrays.stream(parsedString.split(","))
                 .collect(Collectors.toSet());
     }
 
-    public static List<HashSet<String>> separateMasksByType(Set<String> maskList){
+    public static List<HashSet<String>> separateMasksByType(Set<String> maskList) {
         HashSet<String> rangeMasks = new HashSet<>();
         HashSet<String> wildCardMasks = new HashSet<>();
         HashSet<String> exactMasks = new HashSet<>();
-        for (String mask: maskList) {
-            if (mask.endsWith("%")){
+        for (String mask : maskList) {
+            if (mask.endsWith("%")) {
                 rangeMasks.add(mask);
-            } else if (mask.contains("_")){
+            } else if (mask.contains("_")) {
                 wildCardMasks.add(mask);
             } else {
                 exactMasks.add(mask);
@@ -36,10 +35,10 @@ public class ParsingUtil {
         return new ArrayList<>(Arrays.asList(rangeMasks, wildCardMasks, exactMasks));
     }
 
-    public static Pattern createRegexPattern(List<HashSet<String>> categorizedMasksLists){
+    public static Pattern createRegexPattern(List<HashSet<String>> categorizedMasksLists) {
         StringBuilder rangeMaskRegex = new StringBuilder();
         HashSet<String> rangeMaskSet = categorizedMasksLists.get(0);
-        for (String rangeMask:rangeMaskSet) {
+        for (String rangeMask : rangeMaskSet) {
             rangeMask = rangeMask.substring(0, rangeMask.indexOf("%"));
             rangeMaskRegex.append(rangeMask);
             rangeMaskRegex.append("|");
@@ -54,7 +53,7 @@ public class ParsingUtil {
 
         StringBuilder exactMaskRegex = new StringBuilder();
         HashSet<String> exactMaskSet = categorizedMasksLists.get(2);
-        for (String exactMask:exactMaskSet) {
+        for (String exactMask : exactMaskSet) {
             exactMaskRegex.append(exactMask);
             exactMaskRegex.append("|");
         }
@@ -70,7 +69,7 @@ public class ParsingUtil {
 
     public static Map<String, String> checkEligibility(Set<String> msisdnList,
                                                        Pattern whiteListPattern
-                                                       /*Pattern blackListPattern*/) {
+            /*Pattern blackListPattern*/) {
         Map<String, String> eligibilityMap = new HashMap<>();
 
         for (String msisdn : msisdnList) {
@@ -84,7 +83,7 @@ public class ParsingUtil {
                 eligibilityMap.put(msisdn, format("msisdn = %s is in whitelist", msisdn));
             }
         }*/
-            eligibilityMap.put(msisdn, format("msisdn = %s is in whitelist", msisdn));
+                eligibilityMap.put(msisdn, format("msisdn = %s is in whitelist", msisdn));
             }
         }
         return eligibilityMap;
