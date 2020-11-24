@@ -1,5 +1,9 @@
 package az.azerconnect.azerconnectbackend.exception;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(value = HttpStatus.NOT_FOUND)
 public class NullException extends RuntimeException {
 
     public NullException() {
@@ -9,4 +13,6 @@ public class NullException extends RuntimeException {
     public NullException(String message) {
         super(message);
     }
+
+
 }

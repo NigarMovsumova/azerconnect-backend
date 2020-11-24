@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("${api.root.url}")
 public class EligibilityController {
 
     private final EligibilityCheckService eligibilityCheckService;
@@ -17,7 +17,7 @@ public class EligibilityController {
         this.eligibilityCheckService = eligibilityCheckService;
     }
 
-    @GetMapping("masklist/iseligible")
+    @GetMapping("masklist/isEligible")
     public Map<String, String> isEligibleToSell(MsisdnRequest msisdnRequest) {
         return eligibilityCheckService.isEligibleToSell(msisdnRequest);
     }
