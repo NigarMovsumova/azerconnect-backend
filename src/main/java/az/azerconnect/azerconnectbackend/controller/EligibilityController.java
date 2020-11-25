@@ -3,6 +3,7 @@ package az.azerconnect.azerconnectbackend.controller;
 import az.azerconnect.azerconnectbackend.model.MsisdnRequest;
 import az.azerconnect.azerconnectbackend.service.EligibilityCheckService;
 import java.util.Map;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
