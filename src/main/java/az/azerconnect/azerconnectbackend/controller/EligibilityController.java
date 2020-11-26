@@ -4,12 +4,12 @@ import az.azerconnect.azerconnectbackend.model.MsisdnRequest;
 import az.azerconnect.azerconnectbackend.service.EligibilityCheckService;
 import java.util.Map;
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.apache.logging.log4j.Logger;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")

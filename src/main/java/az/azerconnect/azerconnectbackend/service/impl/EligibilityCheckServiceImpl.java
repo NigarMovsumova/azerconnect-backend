@@ -30,12 +30,12 @@ public class EligibilityCheckServiceImpl implements EligibilityCheckService {
         }
 
         Pattern whiteListRegexPattern = null;
-        if (msisdnRequest.getWhiteListString() != null && msisdnRequest.getWhiteListString().length() != 0){
+        if (msisdnRequest.getWhiteListString() != null && msisdnRequest.getWhiteListString().length() != 0) {
             whiteListRegexPattern = createRegexPattern(msisdnRequest.getWhiteListString());
         }
 
         Pattern blackListRegexPattern = null;
-        if (msisdnRequest.getBlackListString() != null && msisdnRequest.getBlackListString().length() != 0){
+        if (msisdnRequest.getBlackListString() != null && msisdnRequest.getBlackListString().length() != 0) {
             blackListRegexPattern = createRegexPattern(msisdnRequest.getBlackListString());
         }
 

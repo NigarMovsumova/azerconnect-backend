@@ -2,11 +2,9 @@ package az.azerconnect.azerconnectbackend
 
 import az.azerconnect.azerconnectbackend.exception.EmptyMsisdnListException
 import az.azerconnect.azerconnectbackend.exception.EmptyRequestException
-
 import az.azerconnect.azerconnectbackend.model.MsisdnRequest
 import az.azerconnect.azerconnectbackend.service.impl.EligibilityCheckServiceImpl
 import spock.lang.Specification
-
 
 class EligibilityCheckServiceImplTest extends Specification {
 

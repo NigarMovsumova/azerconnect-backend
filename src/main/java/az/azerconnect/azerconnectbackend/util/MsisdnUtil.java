@@ -26,14 +26,14 @@ public class MsisdnUtil {
             msisdn = msisdn.substring(3);
             if (isMsisdnValid(msisdn)) {
                 logger.info("{} is valid", msisdn);
-                if (blackListPattern!= null && blackListPattern.matcher(msisdn).lookingAt()) {
+                if (blackListPattern != null && blackListPattern.matcher(msisdn).lookingAt()) {
                     logger.info("{} has a match in blackList", msisdn);
                     eligibilityMap.put(msisdn, format("msisdn = %s is in blacklist", msisdn));
                 } else if (whiteListPattern != null && !whiteListPattern.matcher(msisdn).lookingAt()) {
                     logger.info("{} does not have a match in whiteList", msisdn);
                     eligibilityMap.put(msisdn, format("msisdn = %s is not in whitelist", msisdn));
-                } else if (whiteListPattern!= null &&
-                        blackListPattern!= null &&
+                } else if (whiteListPattern != null &&
+                        blackListPattern != null &&
                         whiteListPattern.matcher(msisdn).lookingAt() &&
                         !blackListPattern.matcher(msisdn).lookingAt()) {
                     logger.info("{} can be sold", msisdn);
