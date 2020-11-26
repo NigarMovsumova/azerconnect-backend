@@ -26,13 +26,15 @@ public class MsisdnUtil {
             msisdn = msisdn.substring(3);
             if (isMsisdnValid(msisdn)) {
                 logger.info("{} is valid", msisdn);
-                if (blackListPattern.matcher(msisdn).lookingAt()) {
+                if (blackListPattern!= null && blackListPattern.matcher(msisdn).lookingAt()) {
                     logger.info("{} has a match in blackList", msisdn);
                     eligibilityMap.put(msisdn, format("msisdn = %s is in blacklist", msisdn));
-                } else if (!whiteListPattern.matcher(msisdn).lookingAt()) {
+                } else if (whiteListPattern != null && !whiteListPattern.matcher(msisdn).lookingAt()) {
                     logger.info("{} does not have a match in whiteList", msisdn);
                     eligibilityMap.put(msisdn, format("msisdn = %s is not in whitelist", msisdn));
-                } else if (whiteListPattern.matcher(msisdn).lookingAt() &&
+                } else if (whiteListPattern!= null &&
+                        blackListPattern!= null &&
+                        whiteListPattern.matcher(msisdn).lookingAt() &&
                         !blackListPattern.matcher(msisdn).lookingAt()) {
                     logger.info("{} can be sold", msisdn);
                     eligibilityMap.put(msisdn, "OK");
@@ -44,9 +46,6 @@ public class MsisdnUtil {
 
     public static Pattern createRegexPattern(String listString) {
         logger.info("createRegexPattern start for listString:{}", listString);
-        if (listString == null) {
-            listString = "$^";
-        }
 
         String regexString = listString.replace("%,", "|").replace("_", "([0-9])")
                 .replace(",", "|");

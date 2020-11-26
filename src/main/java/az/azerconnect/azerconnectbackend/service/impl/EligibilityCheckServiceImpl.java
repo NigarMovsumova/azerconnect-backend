@@ -29,8 +29,16 @@ public class EligibilityCheckServiceImpl implements EligibilityCheckService {
             throw new EmptyMsisdnListException("Number list is not provided");
         }
 
-        Pattern whiteListRegexPattern = createRegexPattern(msisdnRequest.getWhiteListString());
-        Pattern blackListRegexPattern = createRegexPattern(msisdnRequest.getBlackListString());
+        Pattern whiteListRegexPattern = null;
+        if (msisdnRequest.getWhiteListString() != null && msisdnRequest.getWhiteListString().length() != 0){
+            whiteListRegexPattern = createRegexPattern(msisdnRequest.getWhiteListString());
+        }
+
+        Pattern blackListRegexPattern = null;
+        if (msisdnRequest.getBlackListString() != null && msisdnRequest.getBlackListString().length() != 0){
+            blackListRegexPattern = createRegexPattern(msisdnRequest.getBlackListString());
+        }
+
         return checkEligibility(msisdnRequest.getMsisdnList(), whiteListRegexPattern, blackListRegexPattern);
     }
 }
