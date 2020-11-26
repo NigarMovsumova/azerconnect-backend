@@ -56,7 +56,6 @@ class MsisdnUtilSpec extends Specification {
         "1"                   | Pattern.compile("1")
         "702769481"           | Pattern.compile("702769481")
         "702769481,702558585" | Pattern.compile("702769481|702558585")
-        null                  | Pattern.compile("\$^")
         "772854774"           | Pattern.compile("772854774")
     }
 
