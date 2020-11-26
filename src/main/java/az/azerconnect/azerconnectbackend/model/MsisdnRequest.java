@@ -19,6 +19,4 @@ public class MsisdnRequest {
     private String blackListString;
 
     private String whiteListString;
-
-
 }
