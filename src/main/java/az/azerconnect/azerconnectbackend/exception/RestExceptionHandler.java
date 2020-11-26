@@ -12,8 +12,14 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(NullException.class)
-    protected ResponseEntity<Object> handleNullException(NullException ex) {
+    @ExceptionHandler({EmptyMsisdnListException.class})
+    protected ResponseEntity<Object> handleEmptyMsisdnListException(EmptyMsisdnListException ex) {
         return new ResponseEntity<>(new GeneralException(ex.getMessage(), "404"), HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler({EmptyRequestException.class})
+    protected ResponseEntity<Object> handleEmptyRequestException(EmptyRequestException ex) {
+        return new ResponseEntity<>(new GeneralException(ex.getMessage(), "404"), HttpStatus.NOT_FOUND);
+    }
+
 }

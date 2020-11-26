@@ -26,8 +26,7 @@ public class EligibilityController {
 
     @PostMapping("masklist/isEligible")
     public Map<String, String> isEligibleToSell(@RequestBody MsisdnRequest msisdnRequest) {
-        logger.debug("isEligibleToSell start for msisdnList:{}", msisdnRequest.getMsisdnList());
-        logger.debug(msisdnRequest);
+        logger.debug("isEligibleToSell start for msisdnRequest:{}", msisdnRequest);
         return eligibilityCheckService.isEligibleToSell(msisdnRequest);
     }
 }
