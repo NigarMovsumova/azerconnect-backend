@@ -17,10 +17,4 @@ public class MsisdnResponse {
         return msisdnListResponse;
     }
 
-    @Override
-    public String toString() {
-        return "MsisdnResponse{" +
-                "msisdnListResponse=" + msisdnListResponse +
-                '}';
-    }
 }

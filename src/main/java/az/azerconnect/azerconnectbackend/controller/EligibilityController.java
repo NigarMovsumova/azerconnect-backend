@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.apache.logging.log4j.Logger;
@@ -24,7 +25,7 @@ public class EligibilityController {
     }
 
     @PostMapping("masklist/isEligible")
-    public Map<String, String> isEligibleToSell(MsisdnRequest msisdnRequest) {
+    public Map<String, String> isEligibleToSell(@RequestBody MsisdnRequest msisdnRequest) {
         logger.debug("isEligibleToSell start for msisdnList:{}", msisdnRequest.getMsisdnList());
         logger.debug(msisdnRequest);
         return eligibilityCheckService.isEligibleToSell(msisdnRequest);
